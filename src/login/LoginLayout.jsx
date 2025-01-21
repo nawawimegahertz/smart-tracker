@@ -61,7 +61,7 @@ const LoginLayout = ({ children, topRightControls = null, childrenFooter = null 
         <div style={styles.logoContainer}>
           <LogoImage color="#1976d2" />
         </div>
-        <h1 style={styles.title}>GPS Anda. Hak Anda.</h1>
+        <h1 style={styles.title}>Your Best Mobility Partner.</h1>
         <form style={styles.form}>{children}</form>
         {childrenFooter && <div style={styles.footer}>{childrenFooter}</div>}
       </div>

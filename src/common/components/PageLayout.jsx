@@ -14,7 +14,8 @@ import makeStyles from '@mui/styles/makeStyles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import MenuIcon from '../attributes/NavbarIcon/menu-icon.png';
+// import MenuIcon from '../attributes/NavbarIcon/menu-icon.png';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from './LocalizationProvider';
 
