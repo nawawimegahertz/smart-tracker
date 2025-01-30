@@ -20,14 +20,14 @@ import {
   Tooltip,
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import CloseIcon from '../attributes/ComponentIcons/close-icon.png';
+const CloseIcon = "https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/close.svg";
 import ReplayIcon from '../attributes/ComponentIcons/replay-icon.png';
 
 import PublishIcon from '../attributes/ComponentIcons/publish-icon.png';
 import EditIcon from '../attributes/ComponentIcons/edit-icon.png';
 // import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteIcon from '../attributes/ComponentIcons/delete-icon.png';
-import PendingIcon from '../attributes/ComponentIcons/pending-icon.png';
+// import PendingIcon from '../attributes/ComponentIcons/pending-icon.png';
 import { useTranslation } from './LocalizationProvider';
 import RemoveDialog from './RemoveDialog';
 import PositionValue from './PositionValue';
@@ -210,9 +210,10 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                       onTouchStart={onClose}
                     >
                       <img
-                        src={CloseIcon}
+                        src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/close.svg"
                         alt="Close Icon"
-                        className={classes.icon} // sesuaikan dengan styling Anda
+                        style={{ width: 20, height: 20 }}
+                        // className={classes.icon}
                       />
                     </IconButton>
                 </div>
@@ -249,83 +250,92 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                 </CardContent>
               )}
               <CardActions classes={{ root: classes.actions }} disableSpacing>
-                <Tooltip title={t('sharedExtra')}>
+                <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
+                  <Tooltip title={t('sharedExtra')}>
+                    <IconButton
+                      color="error"
+                      onClick={() => setAnchorEl(e.currentTarget)}
+                      disabled={!position}
+                    >
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img
+                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/add-icon-16.svg"
+                          alt="Menu Icon"
+                          style={{ width: 25, height: 25 }}
+                        />
+                        <Typography variant="caption" color="textSecondary">{t('addStatus')}</Typography>
+                      </div>
+                    </IconButton>
+                  </Tooltip>
 
-                  <IconButton
-                    color="error"
-                    onClick={() => setAnchorEl(e.currentTarget)}
-                    disabled={!position}
-                  >
-                    <img
-                      src={PendingIcon}
-                      alt="Pending Icon"
-                      style={{ width: 25, height: 25 }}
-                    />
-                  </IconButton>
+                  <Tooltip title={t('reportReplay')}>
+                    <IconButton
+                      color="error"
+                      onClick={() => navigate('/replay')}
+                      disabled={disableActions || !position}
+                    >
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img
+                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/replay-icon-16.svg"
+                          alt="Menu Icon"
+                          style={{ width: 25, height: 25 }}
+                        />
+                        <Typography variant="caption" color="textSecondary">Replay</Typography>
+                      </div>
+                    </IconButton>
+                  </Tooltip>
 
-                </Tooltip>
-                <Tooltip title={t('reportReplay')}>
+                  <Tooltip title={t('commandTitle')}>
+                    <IconButton
+                      color="error"
+                      onClick={() => navigate(`/settings/device/${deviceId}/command`)}
+                      disabled={disableActions}
+                    >
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img
+                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/command-icon.svg"
+                          alt="Command Icon"
+                          style={{ width: 25, height: 25 }}
+                        />
+                        <Typography variant="caption" color="textSecondary">{t('commandStatus')}</Typography>
+                      </div>
+                    </IconButton>
+                  </Tooltip>
 
-                  <IconButton
-                    color="error"
-                    onClick={() => navigate('/replay')}
-                    disabled={disableActions || !position}
-                  >
-                    <img
-                      src={ReplayIcon}
-                      alt="Replay Icon"
-                      style={{ width: 25, height: 25 }}
-                    />
-                  </IconButton>
+                  <Tooltip title={t('sharedEdit')}>
+                    <IconButton
+                      color="error"
+                      onClick={() => navigate(`/settings/device/${deviceId}`)}
+                      disabled={disableActions || deviceReadonly}
+                    >
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img
+                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/edit-icon-16.svg"
+                          alt="Edit Icon"
+                          style={{ width: 25, height: 25 }}
+                        />
+                        <Typography variant="caption" color="textSecondary">{t('editStatus')}</Typography>
+                      </div>
+                    </IconButton>
+                  </Tooltip>
 
-                </Tooltip>
-                <Tooltip title={t('commandTitle')}>
-
-                  <IconButton
-                    color="error"
-                    onClick={() => navigate(`/settings/device/${deviceId}/command`)}
-                    disabled={disableActions}
-                  >
-                    <img
-                      src={PublishIcon}
-                      alt="Publish Icon"
-                      style={{ width: 25, height: 25 }}
-                    />
-                  </IconButton>
-
-                </Tooltip>
-
-
-                <Tooltip title={t('sharedEdit')}>
-            
-                  <IconButton
-                    color="error"
-                    onClick={() => navigate(`/settings/device/${deviceId}`)}
-                    disabled={disableActions || deviceReadonly}
-                  >
-                    <img
-                      src={EditIcon}
-                      alt="Edit Icon"
-                      style={{ width: 25, height: 25 }}
-                    />
-                  </IconButton>
-                </Tooltip>
-
-
-                <Tooltip title={t('sharedRemove')}>
-                  <IconButton
-                    color="error"
-                    onClick={() => setRemoving(true)}
-                    disabled={disableActions || deviceReadonly}
-                  >
-                    <img
-                      src={DeleteIcon}
-                      alt="Delete Icon"
-                      style={{ width: 25, height: 25 }}
-                    />
-                  </IconButton>
-
-                </Tooltip>
+                  <Tooltip title={t('sharedRemove')}>
+                    <IconButton
+                      color="error"
+                      onClick={() => setRemoving(true)}
+                      disabled={disableActions || deviceReadonly}
+                    >
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img
+                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/delete-icon-48.svg"
+                          alt="Delete Icon"
+                          style={{ width: 25, height: 25 }}
+                        />
+                        <Typography variant="caption" color="textSecondary">{t('deleteStatus')}</Typography>
+                      </div>
+                    </IconButton>
+                  </Tooltip>
+                </div>
               </CardActions>
             </Card>
           </Draggable>

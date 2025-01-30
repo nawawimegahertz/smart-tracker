@@ -160,15 +160,15 @@ const LoginPage = () => {
   const footerContent = (
     <Box>
       <Typography variant="body2" style={{ color: '#555' }}>
-        Belum punya akun?
+        {t('wantToRegister')}
         <Link
           href="/register"
-          style={{ color: '#1976d2', textDecoration: 'none', marginLeft: '4px', cursor: 'pointer' }}
+          style={{ color: '#1976d2', textDecoration: 'none', marginLeft: '4px', cursor: 'pointer', fontWeight: 'bold' }}
           onMouseOver={(e) => (e.target.style.textDecoration = 'underline')}
           onMouseOut={(e) => (e.target.style.textDecoration = 'none')}
           onClick={(e) => { e.preventDefault(); navigate('/register'); }}
         >
-          Daftar sekarang.
+          {t('registerNow')}
         </Link>
       </Typography>
       {failedOnce && (

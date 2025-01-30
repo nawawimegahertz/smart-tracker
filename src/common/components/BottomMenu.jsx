@@ -5,11 +5,11 @@ import {
   Paper, BottomNavigation, BottomNavigationAction, Menu, MenuItem, Typography, Badge,
 } from '@mui/material';
 
-import reportIcon from '../attributes/BottomMenuIcons/report-icon.png';
-import settingsIcon from '../attributes/BottomMenuIcons/setting-icon.png';
-import mapIcon from '../attributes/BottomMenuIcons/map-icon.png';
-import personIcon from '../attributes/BottomMenuIcons/person-icon.png';
-import logoutIcon from '../attributes/BottomMenuIcons/logout-icon.png';
+// import reportIcon from '../attributes/BottomMenuIcons/report-icon.png';
+// import settingsIcon from '../attributes/BottomMenuIcons/setting-icon.png';
+// import mapIcon from '../attributes/BottomMenuIcons/map-icon.png';
+// import personIcon from '../attributes/BottomMenuIcons/person-icon.png';
+// import logoutIcon from '../attributes/BottomMenuIcons/logout-icon.png';
 
 import { sessionActions } from '../../store';
 import { useTranslation } from './LocalizationProvider';
@@ -105,7 +105,11 @@ const BottomMenu = () => {
           label={t('mapTitle')}
           icon={(
             <Badge color="error" variant="dot" overlap="circular" invisible={socket !== false}>
-              <img src={mapIcon} alt="Map Icon" style={{ width: 24, height: 24 }} />
+              <img
+                src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/map-icon.svg"
+                alt="Map icon"
+                style={{ width: 25, height: 25 }}
+              />
             </Badge>
           )}
           value="map"
@@ -113,25 +117,41 @@ const BottomMenu = () => {
         {!disableReports && (
           <BottomNavigationAction
             label={t('reportTitle')}
-            icon={<img src={reportIcon} alt="Report Icon" style={{ width: 24, height: 24 }} />}
+            icon={
+            <img 
+            src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/reports-icon.svg"
+            alt="Report Icon"
+            style={{ width: 25, height: 25 }}     
+            />}
             value="reports"
           />
         )}
         <BottomNavigationAction
           label={t('settingsTitle')}
-          icon={<img src={settingsIcon} alt="Settings Icon" style={{ width: 24, height: 24 }} />}
+          icon={
+          <img src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/setting-icon.svg"  
+          alt="Settings Icon"
+          style={{ width: 24, height: 24 }} />
+          }
           value="settings"
         />
         {readonly ? (
           <BottomNavigationAction
             label={t('loginLogout')}
-            icon={<img src={logoutIcon} alt="Logout Icon" style={{ width: 24, height: 24 }} />}
+            icon=
+            {<img
+              src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/logout-icon.svg"
+              alt="Logout Icon"
+              style={{ width: 25, height: 25 }}
+              />}
             value="logout"
           />
         ) : (
           <BottomNavigationAction
             label={t('settingsUser')}
-            icon={<img src={personIcon} alt="Person Icon" style={{ width: 24, height: 24 }} />}
+            icon={<img src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/person-icon.svg"
+            alt="Person Icon"
+            style={{ width: 24, height: 24 }} />}
             value="account"
           />
         )}

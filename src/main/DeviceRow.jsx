@@ -7,14 +7,14 @@ import {
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
-import BatteryFullIcon from '../main/IconToolbar/batteryfull-icon.png';
-import BatteryChargingFullIcon from '../main/IconToolbar/batterychargingfull-icon.png';
-import Battery60Icon from '../main/IconToolbar/battery60-icon.png';
-import BatteryCharging60Icon from '../main/IconToolbar/batterycharging60-icon.png';
-import Battery20Icon from '../main/IconToolbar/battery20-icon.png';
-import BatteryCharging20Icon from '../main/IconToolbar/batterycharging20-icon.png';
-import ErrorIcon from '../main/IconToolbar/error-icon.png';
-import EngineIcon from '../main/IconToolbar/engine.png';
+const BatteryFullIcon = "https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/batteryfull.svg";
+const BatteryChargingFullIcon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/batterychargingfull.svg';
+const Battery60Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/battery60.svg';
+const BatteryCharging60Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/batterycharging60.svg';
+const Battery20Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/battery20.svg';
+const BatteryCharging20Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/batterycharging20.svg';
+const ErrorIcon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/error.svg';
+const EngineIcon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/engine.svg';
 
 import { devicesActions } from '../store';
 import {

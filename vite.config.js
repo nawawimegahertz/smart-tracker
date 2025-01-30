@@ -8,8 +8,8 @@ export default defineConfig(() => ({
   server: {
     port: 3000,
     proxy: {
-      '/api/socket': 'ws://stupa107-8.online:8082',
-      '/api': 'http://stupa107-8fm.online:8082',
+      '/api/socket': 'ws://snstrack.com:8082',
+      '/api': 'http://snstrack.com:8082',
     },
   },
   build: {
