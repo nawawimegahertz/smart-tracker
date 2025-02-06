@@ -2,7 +2,7 @@ import React from 'react';
 import {
   AppBar, Toolbar, Typography, IconButton,
 } from '@mui/material';
-import MenuIcon from '../attributes/NavbarIcon/menu-icon.png';
+import MenuIcon from '../attributes/navbar-icons/menu.svg';
 
 const Navbar = ({ setOpenDrawer, title }) => (
   <AppBar position="sticky" color="inherit">

@@ -20,14 +20,15 @@ import {
   Tooltip,
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-const CloseIcon = "https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/close.svg";
-import ReplayIcon from '../attributes/ComponentIcons/replay-icon.png';
 
-import PublishIcon from '../attributes/ComponentIcons/publish-icon.png';
-import EditIcon from '../attributes/ComponentIcons/edit-icon.png';
-// import DeleteIcon from '@mui/icons-material/Delete';
-import DeleteIcon from '../attributes/ComponentIcons/delete-icon.png';
-// import PendingIcon from '../attributes/ComponentIcons/pending-icon.png';
+import CloseIcon from '../attributes/status-icons/close.svg';
+import ReplayIcon from '../attributes/status-icons/replay.svg';
+import PublishIcon from '../attributes/status-icons/publish.svg';
+import EditIcon from '../attributes/status-icons/edit.svg';
+import DeleteIcon from '../attributes/status-icons/delete.svg';
+import PendingIcon from '../attributes/status-icons/pending-icon.svg';
+import AddIcon from '../attributes/status-icons/add.svg'
+
 import { useTranslation } from './LocalizationProvider';
 import RemoveDialog from './RemoveDialog';
 import PositionValue from './PositionValue';
@@ -210,7 +211,7 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                       onTouchStart={onClose}
                     >
                       <img
-                        src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/close.svg"
+                        src={CloseIcon}
                         alt="Close Icon"
                         style={{ width: 20, height: 20 }}
                         // className={classes.icon}
@@ -259,8 +260,8 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                     >
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <img
-                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/add-icon-16.svg"
-                          alt="Menu Icon"
+                          src={AddIcon}
+                          alt="Add Icon"
                           style={{ width: 25, height: 25 }}
                         />
                         <Typography variant="caption" color="textSecondary">{t('addStatus')}</Typography>
@@ -276,9 +277,9 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                     >
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <img
-                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/replay-icon-16.svg"
+                          src={ReplayIcon}
                           alt="Menu Icon"
-                          style={{ width: 25, height: 25 }}
+                          style={{ width: 23, height: 23 }}
                         />
                         <Typography variant="caption" color="textSecondary">Replay</Typography>
                       </div>
@@ -293,9 +294,9 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                     >
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <img
-                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/command-icon.svg"
+                          src={PublishIcon}
                           alt="Command Icon"
-                          style={{ width: 25, height: 25 }}
+                          style={{ width: 22, height: 22 }}
                         />
                         <Typography variant="caption" color="textSecondary">{t('commandStatus')}</Typography>
                       </div>
@@ -310,9 +311,9 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                     >
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <img
-                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/edit-icon-16.svg"
+                          src={EditIcon}
                           alt="Edit Icon"
-                          style={{ width: 25, height: 25 }}
+                          style={{ width: 23, height: 23 }}
                         />
                         <Typography variant="caption" color="textSecondary">{t('editStatus')}</Typography>
                       </div>
@@ -327,9 +328,9 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                     >
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <img
-                          src="https://nawawimegahertz.github.io/svg-icons-cdn/StatusCardIcons/delete-icon-48.svg"
+                          src={DeleteIcon}
                           alt="Delete Icon"
-                          style={{ width: 25, height: 25 }}
+                          style={{ width: 23, height: 23 }}
                         />
                         <Typography variant="caption" color="textSecondary">{t('deleteStatus')}</Typography>
                       </div>

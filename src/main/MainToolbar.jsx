@@ -6,10 +6,11 @@ import {
 } from '@mui/material';
 import { makeStyles, useTheme } from '@mui/styles';
 
-import mapIcon from '../main/IconToolbar/map-icon.png'; // Mengimpor gambar lokal
-import ViewListIcon from '../main/IconToolbar/viewlist-icon.png';
-import AddIcon from '../main/IconToolbar/add-icon.png';
-import TuneIcon from '../main/IconToolbar/tune-icon.png';
+import mapIcon from '../main/toolbar-icons/map.svg';
+import ViewListIcon from '../main/toolbar-icons/viewlist.svg';
+import AddIcon from '../main/toolbar-icons/add.svg';
+import TuneIcon from '../main/toolbar-icons/tune.svg';
+
 import { useTranslation } from '../common/components/LocalizationProvider';
 import { useDeviceReadonly } from '../common/util/permissions';
 import DeviceRow from './DeviceRow';

@@ -19,9 +19,9 @@ import {
   OutlinedInput,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import DeleteForeverIcon from '../settings/settings-icons/delete.svg';
 import CachedIcon from '@mui/icons-material/Cached';
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '../settings/settings-icons/close.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import EditItemView from './components/EditItemView';
 import EditAttributesAccordion from './components/EditAttributesAccordion';
@@ -37,6 +37,7 @@ import { useCatch } from '../reactHelper';
 import useMapStyles from '../map/core/useMapStyles';
 import { map } from '../map/core/MapView';
 import useSettingsStyles from './common/useSettingsStyles';
+import { Close } from '@mui/icons-material';
 
 const UserPage = () => {
   const classes = useSettingsStyles();
@@ -163,7 +164,11 @@ const UserPage = () => {
                           <CachedIcon fontSize="small" />
                         </IconButton>
                         <IconButton size="small" edge="end" onClick={() => setItem({ ...item, totpKey: null })}>
-                          <CloseIcon fontSize="small" />
+                          <img
+                            src={CloseIcon}
+                            alt="Close Icon"
+                            style={{ width: 22, height: 22 }}
+                          />
                         </IconButton>
                       </InputAdornment>
                     )}
@@ -410,7 +415,13 @@ const UserPage = () => {
                   variant="outlined"
                   color="error"
                   onClick={handleDelete}
-                  startIcon={<DeleteForeverIcon />}
+                  startIcon={
+                    <img
+                      src={DeleteForeverIcon}
+                      alt="Delete Forever Icon"
+                      style={{ width: 23, height: 23 }}
+                    />
+                  }
                 >
                   {t('userDeleteAccount')}
                 </Button>

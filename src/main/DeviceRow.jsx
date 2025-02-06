@@ -13,7 +13,9 @@ const Battery60Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIc
 const BatteryCharging60Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/batterycharging60.svg';
 const Battery20Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/battery20.svg';
 const BatteryCharging20Icon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/batterycharging20.svg';
-const ErrorIcon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/error.svg';
+
+import ErrorIcon from '../main/toolbar-icons/error.svg';
+
 const EngineIcon = 'https://nawawimegahertz.github.io/svg-icons-cdn/SidebarIcons/engine.svg';
 
 import { devicesActions } from '../store';
@@ -29,17 +31,14 @@ dayjs.extend(relativeTime);
 
 const useStyles = makeStyles((theme) => ({
   icon: {
-    width: '25px',
-    height: '25px',
-    filter: 'brightness(0) invert(1)',
+    width: '28px',
+    height: '28px',
   },
   batteryText: {
     fontSize: '0.75rem',
     fontWeight: 'normal',
     lineHeight: '0.875rem',
   },
-  // Kelas warna (tidak akan mengubah warna PNG secara langsung,
-  // namun tetap dipertahankan agar setup bawaan tidak berubah)
   success: {
     color: theme.palette.success.main,
   },

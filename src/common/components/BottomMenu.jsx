@@ -5,11 +5,11 @@ import {
   Paper, BottomNavigation, BottomNavigationAction, Menu, MenuItem, Typography, Badge,
 } from '@mui/material';
 
-// import reportIcon from '../attributes/BottomMenuIcons/report-icon.png';
-// import settingsIcon from '../attributes/BottomMenuIcons/setting-icon.png';
-// import mapIcon from '../attributes/BottomMenuIcons/map-icon.png';
-// import personIcon from '../attributes/BottomMenuIcons/person-icon.png';
-// import logoutIcon from '../attributes/BottomMenuIcons/logout-icon.png';
+import reportIcon from '../attributes/bottom-icons/report.svg';
+import SettingsIcon from '../attributes/bottom-icons/setting.svg';
+import MapIcon from '../attributes/bottom-icons/map.svg';
+import PersonIcon from '../attributes/bottom-icons/person.svg';
+import LogoutIcon from '../attributes/bottom-icons/logout.svg';
 
 import { sessionActions } from '../../store';
 import { useTranslation } from './LocalizationProvider';
@@ -106,7 +106,7 @@ const BottomMenu = () => {
           icon={(
             <Badge color="error" variant="dot" overlap="circular" invisible={socket !== false}>
               <img
-                src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/map-icon.svg"
+                src={MapIcon}
                 alt="Map icon"
                 style={{ width: 25, height: 25 }}
               />
@@ -119,7 +119,7 @@ const BottomMenu = () => {
             label={t('reportTitle')}
             icon={
             <img 
-            src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/reports-icon.svg"
+            src={reportIcon}
             alt="Report Icon"
             style={{ width: 25, height: 25 }}     
             />}
@@ -129,7 +129,7 @@ const BottomMenu = () => {
         <BottomNavigationAction
           label={t('settingsTitle')}
           icon={
-          <img src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/setting-icon.svg"  
+          <img src={SettingsIcon}  
           alt="Settings Icon"
           style={{ width: 24, height: 24 }} />
           }
@@ -140,7 +140,7 @@ const BottomMenu = () => {
             label={t('loginLogout')}
             icon=
             {<img
-              src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/logout-icon.svg"
+              src={LogoutIcon}
               alt="Logout Icon"
               style={{ width: 25, height: 25 }}
               />}
@@ -149,7 +149,7 @@ const BottomMenu = () => {
         ) : (
           <BottomNavigationAction
             label={t('settingsUser')}
-            icon={<img src="https://nawawimegahertz.github.io/svg-icons-cdn/BottomMenuIcons/person-icon.svg"
+            icon={<img src={PersonIcon}
             alt="Person Icon"
             style={{ width: 24, height: 24 }} />}
             value="account"

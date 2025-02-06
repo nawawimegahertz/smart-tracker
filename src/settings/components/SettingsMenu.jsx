@@ -3,19 +3,19 @@ import {
   Divider, List,
 } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
-const CreateIcon = "https://nawawimegahertz.github.io/svg-icons-cdn/SettingsIcons/pen.svg";
+import CreateIcon from '../settings-icons/pen.svg';
 // import TimelineIcon from '@mui/icons-material/Timeline';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import FolderIcon from '@mui/icons-material/Folder';
 // import PersonIcon from '../SettingsIcon/person.png';
-const PersonIcon = "https://nawawimegahertz.github.io/svg-icons-cdn/SettingsIcons/person.svg";
+import PersonIcon from '../settings-icons/person.svg';
 import StorageIcon from '@mui/icons-material/Storage';
 import BuildIcon from '@mui/icons-material/Build';
 import PeopleIcon from '@mui/icons-material/People';
 import TodayIcon from '@mui/icons-material/Today';
 // import PublishIcon from '../SettingsIcon/publish.png';
-const PublishIcon = "https://nawawimegahertz.github.io/svg-icons-cdn/SettingsIcons/saved.svg";
-const SmartphoneIcon = "https://nawawimegahertz.github.io/svg-icons-cdn/SettingsIcons/smartphone.svg";
+import PublishIcon from "../settings-icons/saved.svg";
+import SmartphoneIcon from "../settings-icons/smartphone.svg";
 import HelpIcon from '@mui/icons-material/Help';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import { useLocation } from 'react-router-dom';

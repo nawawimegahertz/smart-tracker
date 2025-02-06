@@ -14,8 +14,8 @@ import makeStyles from '@mui/styles/makeStyles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-// import MenuIcon from '../attributes/NavbarIcon/menu-icon.png';
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '../attributes/navbar-icons/menu.svg';
+// import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from './LocalizationProvider';
 
@@ -122,7 +122,11 @@ const PageLayout = ({ menu, breadcrumbs, children }) => {
       <AppBar className={classes.mobileToolbar} position="static" color="inherit">
         <Toolbar>
           <IconButton color="inherit" edge="start" sx={{ mr: 2 }} onClick={() => setOpenDrawer(true)}>
-           <MenuIcon style={{ width: '25px', height: '25px' }} />
+            <img
+              src={MenuIcon}  
+              alt="Add Icon"
+              style={{ width: 25, height: 25 }}
+            />
           </IconButton>
           <PageTitle breadcrumbs={breadcrumbs} />
         </Toolbar>
